@@ -4,14 +4,6 @@ import requests
 def yandex_md(dir_name, ya_token):
     headers = {'Content-Type': 'application/json', 'Authorization': 'OAuth {}'.format(ya_token)}
     make_dir_url = 'https://cloud-api.yandex.net/v1/disk/resources'
-
-    # try:
-    #     result = requests.put(url=make_dir_url, headers=headers, params={'path': dir_name})
-    # except HTTPError as er:
-    #     result = er.status_code
-    #     return result
-    # return result.status_code
-
     result = requests.put(url=make_dir_url, headers=headers, params={'path': dir_name})
     return result.status_code
 
